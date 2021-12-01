@@ -5,12 +5,14 @@
 
   "bin": {
     "prepare": "./bin/PrepareEnvironment.mjs",
-    "runDay": "node ./bin/runDay.mjs"
+    "runDay": "node ./bin/runDay.mjs",
+    "processInput": "node ./bin/processInput.mjs"
   },  
   
   "scripts": {
     "prepare": "node ./bin/PrepareEnvironment.mjs",
     "runDay": "node ./bin/runDay.mjs",
+    "processInput": "node ./bin/processInput.mjs",
     "test": "jest"
   },
 

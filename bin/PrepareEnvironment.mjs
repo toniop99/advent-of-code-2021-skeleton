@@ -29,27 +29,35 @@ if(!checkDirExists(SRC_PATH)) {
 
 for(let i = 1; i<=25; i++) {
     const currentDayPath = path.join(SRC_PATH, 'day-' + i)
-    const currentSrcPath = path.join(currentDayPath, 'src')
-    const currentTestsPath = path.join(currentDayPath, 'tests')
 
     console.log(chalk.yellow('Creating stuff for advent day ' + i));
 
 
     fs.mkdirSync(currentDayPath)
-    fs.mkdirSync(currentSrcPath)
-    fs.mkdirSync(currentTestsPath)
+    fs.mkdirSync(path.join(currentDayPath, 'part-1' , 'src'), {recursive: true})
+    fs.mkdirSync(path.join(currentDayPath, 'part-1' , 'tests'), {recursive: true})
 
-    fs.writeFileSync(path.join(currentSrcPath, 'index.js'), '');
-    fs.writeFileSync(path.join(currentTestsPath, 'index.test.js'), '');
+    fs.mkdirSync(path.join(currentDayPath, 'part-2' , 'src'), {recursive: true})
+    fs.mkdirSync(path.join(currentDayPath, 'part-2' , 'tests'), {recursive: true})
+
+    fs.writeFileSync(path.join(currentDayPath, 'part-1' , 'src', 'index.js'), '');
+    fs.writeFileSync(path.join(currentDayPath, 'part-1', 'src', 'input.js'), '');
+    fs.writeFileSync(path.join(currentDayPath, 'part-1', 'src', 'input.txt'), '');
+    fs.writeFileSync(path.join(currentDayPath, 'part-1', 'tests', 'index.test.js'), '');
+
+    fs.writeFileSync(path.join(currentDayPath, 'part-2' , 'src', 'index.js'), '');
+    fs.writeFileSync(path.join(currentDayPath, 'part-2', 'src', 'input.js'), '');
+    fs.writeFileSync(path.join(currentDayPath, 'part-2', 'src', 'input.txt'), '');
+    fs.writeFileSync(path.join(currentDayPath, 'part-2', 'tests', 'index.test.js'), '');
 
     if(i === 1) {
         fs.appendFileSync(
-            path.join(currentSrcPath, 'index.js'), 
+            path.join(currentDayPath, 'part-1', 'src', 'index.js'), 
             'function sum (a, b) {\n  return a + b\n}\nmodule.exports = sum\n'
             );
             
         fs.appendFileSync(
-            path.join(currentTestsPath, 'index.test.js'), 
+            path.join(currentDayPath, 'part-1', 'tests', 'index.test.js'), 
             "const sum = require('../src/index')\n\ntest('1 + 2 equal to 3', () => {\n  expect(sum(1, 2)).toBe(3)\n})\n"
             );
 

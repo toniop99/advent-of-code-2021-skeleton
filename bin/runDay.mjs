@@ -4,8 +4,14 @@ import path from 'path'
 
 let day = process.argv[2]
 
+let part = process.argv[3]
+
 if (day === undefined) {
   day = new Date().getDate()
+}
+
+if (part === undefined) {
+  part = 1
 }
 
 if (isNaN(day)) {
@@ -13,7 +19,12 @@ if (isNaN(day)) {
   process.exit()
 }
 
-const folderSrcPath = path.join(process.cwd(), 'src', 'day-' + day, 'src')
+if (isNaN(part)) {
+  console.log(chalk.red('Pass as argument only the part number of the folder. Default part(1)'))
+  process.exit()
+}
+
+const folderSrcPath = path.join(process.cwd(), 'src', 'day-' + day, 'part-' + part, 'src')
 
 const files = fs.readdirSync(folderSrcPath)
 
