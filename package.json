@@ -2,20 +2,30 @@
   "name": "advent-of-code-2021-skeleton",
   "version": "1.0.0",
   "description": "Skeleton template for advent of code 2021",
-  "main": "index.js",
+
+  "bin": {
+    "prepare": "./bin/PrepareEnvironment.mjs",
+    "runDay": "node ./bin/runDay.mjs"
+  },  
+  
   "scripts": {
     "prepare": "node ./bin/PrepareEnvironment.mjs",
+    "runDay": "node ./bin/runDay.mjs",
     "test": "jest"
   },
+
   "author": "toniop99",
   "license": "MIT",
+  
   "devDependencies": {
     "jest": "^27.4.3"
   },
+
   "dependencies": {
     "standard": "16.0.4",
     "zx": "4.2.0"
   },
+
   "eslintConfig": {
     "extends": "standard",
     "env": {
