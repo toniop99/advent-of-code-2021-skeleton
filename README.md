@@ -20,7 +20,8 @@ Start coding on ``index.js`` of the current challenge day and write test if you 
 
 - With ``npm test`` run all the test of the project.
 - With ``npm test {src/folder}`` run the test of this folder.
-- With ``npm run runDay {day}`` run the index.js of the folder of the ``day`` specified as argument.
+- With ``npm run runDay {day} {part}`` run the index.js of the folder of the ``day`` specified as argument and the ``part`` specified as second argument.
+- With ``npm run processInput {day} {part}`` process the input.txt of the folder of the ``day`` specified as argument and the ``part`` specified as second argument to convert the data separated by \n into an array on ``input.js``.
 
 
 ## Good coding!
