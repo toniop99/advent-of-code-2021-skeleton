@@ -1,4 +1,4 @@
-import { $, chalk, question, cd,  } from 'zx'
+import { $, chalk, question} from 'zx'
 import fs from 'fs'
 import path from 'path'
 
@@ -7,7 +7,14 @@ $.verbose = false
 const CURRENT_PATH = process.cwd()
 const SRC_PATH = path.join(CURRENT_PATH, 'src')
 
-let confirmExecution = await question(chalk.redBright('All folders and files inside src will be removed to prepare the structure for advent of code. Are u sure? (y, n) '), {choices: ['y', 'n']});
+let confirmExecution = null
+
+do {
+
+    confirmExecution = await question(chalk.redBright('All folders and files inside src will be removed to prepare the structure for advent of code. Are u sure? (y, n) '), {choices: ['y', 'n']});
+
+} while(confirmExecution === null || confirmExecution === '' || !['y', 'yes', 'n', 'no'].includes(confirmExecution))
+
 
 if(confirmExecution === 'n' || confirmExecution === 'no') {
     process.exit()
