@@ -1,0 +1,29 @@
+node_modules
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# dotenv environment variables file
+.env
+.env.test
+.env.production
+
+# yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Optional eslint cache
+.eslintcache
+
+# Optional npm cache directory
+.npm
